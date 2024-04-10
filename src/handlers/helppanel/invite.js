@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const {Discord, ButtonBuilder, Events} = require('discord.js');
 
 module.exports = async (client) => {
     client.on(Discord.Events.InteractionCreate, async (interaction) => {
@@ -45,12 +45,12 @@ module.exports = async (client) => {
                     .addComponents(
                         new Discord.ButtonBuilder()
                             .setLabel("Invite")
-                            .setURL(client.config.discord.botInvite)
+                            .setURL("https://discord.com/oauth2/authorize?client_id=1187310423884693574&permissions=8&scope=bot")
                             .setStyle(Discord.ButtonStyle.Link),
 
                         new Discord.ButtonBuilder()
                             .setLabel("Support server")
-                            .setURL(client.config.discord.serverInvite)
+                            .setURL("https://discord.gg/zaDTtgwWrE")
                             .setStyle(Discord.ButtonStyle.Link),
                     );
 
