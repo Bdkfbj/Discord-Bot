@@ -5,7 +5,7 @@ module.exports = async (client, interaction, args) => {
         .addComponents(
             new Discord.ButtonBuilder()
                 .setLabel("CorwinDev GitHub")
-                .setURL("https://github.com/sponsors/CorwinDev")
+                .setURL("https://github.com/sponsors")
                 .setStyle(Discord.ButtonStyle.Link),
         );
 
@@ -13,7 +13,7 @@ module.exports = async (client, interaction, args) => {
         title: `${client.user.username}・Donate`,
         desc: '_____ \n\nClick the button below for the sponsor page \n**Pay attention! sponsor is not required**',
         thumbnail: client.user.avatarURL({ dynamic: true }),
-        url: "https://github.com/sponsors/CorwinDev",
+        url: "https://github.com/sponsors/",
         components: [row],
         type: 'editreply'
     }, interaction)
