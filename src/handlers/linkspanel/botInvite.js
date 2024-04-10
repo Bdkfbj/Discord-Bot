@@ -45,7 +45,7 @@ module.exports = async (client) => {
                     .addComponents(
                         new Discord.ButtonBuilder()
                             .setLabel("Bot Invite")
-                            .setURL(client.config.discord.botInvite)
+                            .setURL("https://discord.com/oauth2/authorize?client_id=1187310423884693574&permissions=8&scope=bot")
                             .setStyle(Discord.ButtonStyle.Link),
                     );
 
