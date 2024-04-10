@@ -4,10 +4,9 @@ module.exports = async (client, interaction, args) => {
     client.embed({
         title: "📃・Changelogs",
         desc: `_____`,
-        thumbnail: client.user.avatarURL({ size: 1024 }),
         fields: [{
             name: "📃┆Changelogs",
-                value: '15/3/2023 Updated dependencies',
+                value: 'Made the bot / 4/8/2024',
                 inline: false,
             },
         ],
