@@ -114,23 +114,25 @@ module.exports = async (client, interaction, args) => {
                     .addComponents(
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_transcriptTicket')
+                            .setLabel('transcript')
                             .setEmoji('📝')
                             .setStyle(Discord.ButtonStyle.Primary),
 
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_openTicket')
+                            .setLabel('Reopen')
                             .setEmoji('🔓')
                             .setStyle(Discord.ButtonStyle.Primary),
 
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_deleteTicket')
+                            .setLabel('Delete')
                             .setEmoji('⛔')
                             .setStyle(Discord.ButtonStyle.Danger),
                     );
 
                 client.embed({
                     title: "🔒・Closed",
-                    desc: `📝 - Save transcript \n🔓 - Reopen ticket \n⛔ - Delete ticket`,
                     components: [row],
                 }, interaction.channel)
             }
