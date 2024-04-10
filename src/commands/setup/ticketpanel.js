@@ -11,7 +11,7 @@ module.exports = async (client, interaction, args) => {
             const channel = interaction.guild.channels.cache.get(ticketData.Channel);
             const button = new Discord.ButtonBuilder()
                 .setCustomId('Bot_openticket')
-                .setLabel(name)
+                .setLabel("support/Giveaway")
                 .setStyle(Discord.ButtonStyle.Primary)
                 .setEmoji('🎫')
 
