@@ -33,7 +33,7 @@ module.exports = async (client, interaction, args) => {
                     let role = interaction.guild.roles.cache.find(r => r.id === ticketRole.id);
 
                     try {
-                        var openTicket = "Thanks for creating a ticket! \nSupport will be with you shortly \n\n🔒 - Close ticket \n✋ - Claim ticket \n📝 - Save transcript \n🔔 - Send a notification";
+                        var openTicket = "Thanks for creating a ticket! \nSupport will be with you shortly \n For gw claim please provie ur ign";
                         let ticketMessageData = await ticketMessageConfig.findOne({ Guild: interaction.guild.id });
                         if (ticketMessageData) {
                             openTicket = ticketMessageData.openTicket;
@@ -43,28 +43,26 @@ module.exports = async (client, interaction, args) => {
                             .addComponents(
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_closeticket')
+                                    .setLabel("Close")
                                     .setEmoji('🔒')
                                     .setStyle(Discord.ButtonStyle.Primary),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_claimTicket')
+                                    .setLabel('Claim')
                                     .setEmoji('✋')
                                     .setStyle(Discord.ButtonStyle.Primary),
 
                                 new Discord.ButtonBuilder()
-                                    .setCustomId('Bot_transcriptTicket')
-                                    .setEmoji('📝')
-                                    .setStyle(Discord.ButtonStyle.Primary),
-
-                                new Discord.ButtonBuilder()
                                     .setCustomId('Bot_noticeTicket')
+                                    .setLabel('Notify')
                                     .setEmoji('🔔')
                                     .setStyle(Discord.ButtonStyle.Primary),
                             );
 
                         client.embed({
                             title: `${client.emotes.animated.loading}・Progress`,
-                            desc: `Your ticket is being created...`,
+                            desc: `Your ticket is created `,
                             type: 'ephemeral'
                         }, interaction).then((msg) => {
 
@@ -123,16 +121,6 @@ module.exports = async (client, interaction, args) => {
                                                 name: "👤┆Creator",
                                                 value: `${interaction.user}`,
                                                 inline: true
-                                            },
-                                            {
-                                                name: "📂┆Channel",
-                                                value: `${channel}`,
-                                                inline: true
-                                            },
-                                            {
-                                                name: "⏰┆Created at",
-                                                value: `<t:${(Date.now() / 1000).toFixed(0)}:f>`,
-                                                inline: true
                                             }
                                         ],
                                         type: type
@@ -145,6 +133,8 @@ module.exports = async (client, interaction, args) => {
                                         creator: interaction.user.id,
                                         claimed: "None"
                                     }).save();
+
+                                    
 
                                     if (logsChannel) {
                                         client.embed({
@@ -173,21 +163,6 @@ module.exports = async (client, interaction, args) => {
                                     await client.embed({
                                         desc: openTicket,
                                         fields: [
-                                            {
-                                                name: "👤┆Creator",
-                                                value: `${interaction.user}`,
-                                                inline: true
-                                            },
-                                            {
-                                                name: "📄┆Subject",
-                                                value: `${reason}`,
-                                                inline: true
-                                            },
-                                            {
-                                                name: "⏰┆Created at",
-                                                value: `<t:${(Date.now() / 1000).toFixed(0)}:F>`,
-                                                inline: true
-                                            }
                                         ],
                                         components: [row],
                                         content: `${interaction.user}, ${role}`
