@@ -1,6 +1,16 @@
-var http = require('http');
+var agent = new KeepAliveAgent({ maxSockets: 1 });
 
-http.createServer(function (req,res){
-    res.write("hello");
-    res.end();
-}).listen(8080);
+var options = {
+  agent:agent,
+  headers: {"Connection":"Keep-Alive"}
+}
+
+try {
+  var client = Soap.createClient(url);
+
+  var result = client.myfirstfunction(args,options);
+
+//process result
+  result = client.mysecondfunction(args,options);
+
+}
