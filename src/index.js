@@ -1,10 +1,11 @@
 const Discord = require('discord.js');
+const keep_alive = require('./src/keep_alive.js')
 const chalk = require('chalk');
 require('dotenv').config('./.env');
 const axios = require('axios');
 // Check if is up to date
 const { version } = require('.././package.json');
-axios.get('https://api.github.com/repos/CorwinDev/Discord-Bot/releases/latest').then(res => {
+axios.get('https://api.github.com/repos/').then(res => {
     if (res.data.tag_name !== version) {
         console.log(chalk.red.bgYellow(`Your bot is not up to date! Please update to the latest version!`, version + ' -> ' + res.data.tag_name));
     }
@@ -47,7 +48,7 @@ if (process.env.TOPGG_TOKEN) {
 console.clear();
 console.log(chalk.blue(chalk.bold(`System`)), (chalk.white(`>>`)), (chalk.green(`Starting up`)), (chalk.white(`...`)))
 console.log(`\u001b[0m`)
-console.log(chalk.red(`© CorwinDev | 2021 - ${new Date().getFullYear()}`))
+console.log(chalk.red(`© Jackey army  - ${new Date().getFullYear()}`))
 console.log(chalk.red(`All rights reserved`))
 console.log(`\u001b[0m`)
 console.log(`\u001b[0m`)
@@ -56,8 +57,8 @@ console.log(`\u001b[0m`);
 
 manager.on('shardCreate', shard => {
     let embed = new Discord.EmbedBuilder()
-        .setTitle(`🆙・Launching shard`)
-        .setDescription(`A shard has just been launched`)
+        .setTitle(`🆙・Launching bot`)
+        .setDescription(`A bot has just been launched`)
         .setFields([
             {
                 name: "🆔┆ID",
