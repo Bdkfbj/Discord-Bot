@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const keepAlive = require('./keepalive.js');
 const chalk = require('chalk');
 require('dotenv').config('./.env');
 const axios = require('axios');
