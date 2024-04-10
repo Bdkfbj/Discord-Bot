@@ -25,7 +25,7 @@ module.exports = async (client, interaction, args) => {
                 fields: [
                {
                     name: "ℹ️┆Information",
-                    value: `Bot is a bot with which you can run your entire server! With no less than 350+ commands, we have a large bot with many options to improve your server!`,
+                    value: `Jackey army official bot`,
                     inline: false,
                 },
                 {
@@ -39,23 +39,13 @@ module.exports = async (client, interaction, args) => {
                     inline: true,
                 },
                 {
-                    name: "🆔┆Bot id",
-                    value: `${client.user.id}`,
-                    inline: true,
-                },
-                {
-                    name: "💻┆Shards",
-                    value: `\`${client.options.shardCount}\` shards`,
-                    inline: true,
-                },
-                {
                     name: "🔧┆Bot owner",
-                    value: `<@!755297485328482356> `,
+                    value: `<@!860918549195653151> `,
                     inline: true,
                 },
                 {
-                    name: "🔧┆Bot developer",
-                    value: `<@!755297485328482356> <@!884553151666061372>`,
+                    name: "🔧┆Bot Tester",
+                    value: `<@!840542043801255946> `,
                     inline: true,
                 },
                 {
@@ -66,11 +56,6 @@ module.exports = async (client, interaction, args) => {
                 {
                     name: "🌐┆Servers",
                     value: `\`${totalGuilds}\` servers`,
-                    inline: true,
-                },
-                {
-                    name: "🌐┆Servers this shard",
-                    value: `\`${client.guilds.cache.size}\` servers`,
                     inline: true,
                 },
                 {
@@ -88,11 +73,6 @@ module.exports = async (client, interaction, args) => {
                     value: `\`${totalChannels}\` channels`,
                     inline: true,
                 },
-                {
-                    name: "📅┆Created",
-                    value: `<t:${Math.round(client.user.createdTimestamp / 1000)}>`,
-                    inline: true,
-                },
 
                 {
                     name: "_____ \n\n│System",
@@ -103,37 +83,7 @@ module.exports = async (client, interaction, args) => {
                     name: "🆙┆Uptime",
                     value: `${duration}`,
                     inline: true,
-                },
-                {
-                    name: "⌛┆API speed:",
-                    value: `\`${client.ws.ping}\`ms`,
-                    inline: true,
-                },
-                {
-                    name: "🏷┆Bot Version",
-                    value: `\`${require(`${process.cwd()}/package.json`).version}\``,
-                    inline: true,
-                },
-                {
-                    name: "🏷┆Node.js Version",
-                    value: `\`${process.version}\``,
-                    inline: true,
-                },
-                {
-                    name: "📂┆Discord.js Version",
-                    value: `\`${Discord.version}\``,
-                    inline: true,
-                },
-                {
-                    name: "💾┆Bot memory",
-                    value: `\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}\` MB`,
-                    inline: true,
-                },
-                {
-                    name: "🔗┆Links",
-                    value: `Add me: [[HERE]](${client.config.discord.botInvite}) \nSupport server: [[HERE]](${client.config.discord.serverInvite})`,
-                    inline: false,
-                }],
+                },],
                 type: 'editreply'
             }, interaction)
         })
