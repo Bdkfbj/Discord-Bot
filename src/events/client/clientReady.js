@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const chalk = require('chalk');
+const { Client, GatewayIntentBits, ActivityType } = require('discord.js');
 const { random } = require('mathjs');
 
 module.exports = async (client) => {
@@ -9,12 +10,12 @@ module.exports = async (client) => {
     });
 
     console.log(`\u001b[0m`);
-    console.log(chalk.blue(chalk.bold(`System`)), (chalk.white(`>>`)), chalk.red(`Shard #${client.shard.ids[0] + 1}`), chalk.green(`is ready!`))
+    console.log(chalk.blue(chalk.bold(`System`)), (chalk.white(`>>`)), chalk.red(`bot #${client.shard.ids[0] + 1}`), chalk.green(`is ready!`))
     console.log(chalk.blue(chalk.bold(`Bot`)), (chalk.white(`>>`)), chalk.green(`Started on`), chalk.red(`${client.guilds.cache.size}`), chalk.green(`servers!`))
 
     let embed = new Discord.EmbedBuilder()
-        .setTitle(`🆙・Finishing shard`)
-        .setDescription(`A shard just finished`)
+        .setTitle(`🆙・Finishing Starting bot`)
+        .setDescription(`A Bot just Started`)
         .addFields(
             { name: "🆔┆ID", value: `${client.shard.ids[0] + 1}/${client.options.shardCount}`, inline: true },
             { name: "📃┆State", value: `Ready`, inline: true },
@@ -39,13 +40,12 @@ module.exports = async (client) => {
                     statuttext = [
                         `・❓┆/help`,
                         `・💻┆${totalGuilds} servers`,
-                        `・📨┆discord.gg/corwindev`,
+                        `・📨┆https://discord.gg/H2eYcuXufZ`,
                         `・🎉┆400+ commands`,
-                        `・🏷️┆Version ${require(`${process.cwd()}/package.json`).version}`
                     ];
                 }
                 const randomText = statuttext[Math.floor(Math.random() * statuttext.length)];
-                client.user.setPresence({ activities: [{ name: randomText, type: Discord.ActivityType.Playing }], status: 'online' });
+                client.user.setPresence({ activities: [{ name: 'jackey army', type: ActivityType.Watching }], status: 'online' });
             })
     }, 50000)
 
